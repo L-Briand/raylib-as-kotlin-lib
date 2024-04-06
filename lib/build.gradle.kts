@@ -22,6 +22,7 @@ fun createDefFile(platform: String) {
 }
 
 createDefFile("linuxX64")
+createDefFile("mingwX64")
 
 kotlin {
     linuxX64 {
