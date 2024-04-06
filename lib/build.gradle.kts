@@ -16,7 +16,7 @@ repositories {
 fun createDefFile(platform: String) {
     file("cinterop/$platform/raylib.def").takeIf { !it.exists() }?.writer(Charsets.UTF_8)?.use {
         val defFileTemplate = file("raylib.def.template").readText()
-        val libPath = file("cinterop/$platform/raylib/lib").absolutePath
+        val libPath = file("cinterop/$platform/raylib/lib").absolutePath.replace("\\", "\\\\")
         it.write(String.format(defFileTemplate, libPath))
     }
 }
