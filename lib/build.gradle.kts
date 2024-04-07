@@ -38,6 +38,10 @@ kotlin {
             packageName("raylib")
             compilerOpts("-I${file("cinterop/mingwX64/raylib/include").absolutePath}")
         }
+
+        binaries.executable {
+            entryPoint = "main"
+        }
     }
 }
 
