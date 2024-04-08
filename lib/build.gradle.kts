@@ -23,6 +23,7 @@ fun createDefFile(platform: String) {
 
 createDefFile("linuxX64")
 createDefFile("mingwX64")
+createDefFile("macOS")
 
 kotlin {
     linuxX64 {
@@ -38,9 +39,12 @@ kotlin {
             packageName("raylib")
             compilerOpts("-I${file("cinterop/mingwX64/raylib/include").absolutePath}")
         }
-
-        binaries.executable {
-            entryPoint = "main"
+    }
+    macosArm64 {
+        compilations.getByName("main").cinterops.create("raylib") {
+            defFile(file("cinterop/macosArm64/raylib.def"))
+            packageName("raylib")
+            compilerOpts("-I${file("cinterop/macosArm64/raylib/include").absolutePath}")
         }
     }
 }

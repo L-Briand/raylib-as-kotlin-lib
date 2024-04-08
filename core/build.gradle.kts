@@ -21,6 +21,11 @@ kotlin {
             entryPoint = "main"
         }
     }
+    macosArm64 {
+        binaries.executable {
+            entryPoint = "main"
+        }
+    }
 
     sourceSets {
         commonMain {
@@ -36,6 +41,11 @@ kotlin {
         mingwMain {
             dependencies {
                 implementation("net.orandja.raylib:lib-mingwx64:0.0.0")
+            }
+        }
+        getByName("macosArm64Main") {
+            dependencies {
+                implementation("net.orandja.raylib:lib-macosarm64:0.0.0")
             }
         }
     }

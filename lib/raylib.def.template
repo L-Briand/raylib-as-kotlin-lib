@@ -3,6 +3,7 @@ headerFilter = raylib.h raymath.h rlgl.h
 package = raylib
 staticLibraries = libraylib.a
 libraryPaths = %1$s
+linkerOpts.mingw_x64 = -lopengl32 -lgdi32 -lwinmm
 
 ---
 
