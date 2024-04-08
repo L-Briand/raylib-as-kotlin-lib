@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     kotlin("multiplatform") version "2.0.0-Beta5"
 }
@@ -41,6 +43,10 @@ kotlin {
         macosMain {
             dependencies {
                 implementation("net.orandja.raylib:lib-macosarm64:0.0.0")
+            }
+            compilerOptions {
+                val kotlinCommonCompilerOptions = this@compilerOptions
+                freeCompilerArgs.addAll("-framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL")
             }
         }
     }
