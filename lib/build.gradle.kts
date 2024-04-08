@@ -42,9 +42,9 @@ kotlin {
     }
     macosArm64 {
         compilations.getByName("main").cinterops.create("raylib") {
-            defFile(file("cinterop/macosArm64/raylib.def"))
+            defFile(file("cinterop/macOS/raylib.def"))
             packageName("raylib")
-            compilerOpts("-I${file("cinterop/macosArm64/raylib/include").absolutePath}")
+            compilerOpts("-I${file("cinterop/macOS/raylib/include").absolutePath}")
         }
     }
 }
