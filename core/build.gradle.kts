@@ -26,7 +26,7 @@ kotlin {
     }
     macosArm64("macosArm64") {
         binaries.executable {
-            entryPoint = "main"
+            entryPoint = "net.main"
         }
     }
 
