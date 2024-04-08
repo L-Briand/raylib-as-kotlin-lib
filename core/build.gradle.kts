@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.ir.backend.js.compile
+import org.jetbrains.kotlin.konan.target.linker
 
 plugins {
     kotlin("multiplatform") version "2.0.0-Beta5"
@@ -46,7 +47,6 @@ kotlin {
             }
             compilerOptions {
                 val kotlinCommonCompilerOptions = this@compilerOptions
-                freeCompilerArgs.addAll("-framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL".split("\\s+".toRegex()))
             }
         }
     }
