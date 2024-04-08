@@ -46,10 +46,6 @@ kotlin {
             packageName("raylib")
             compilerOpts("-I${file("cinterop/macOS/raylib/include").absolutePath}")
         }
-
-        binaries.executable {
-            entryPoint = "main"
-        }
     }
 }
 
