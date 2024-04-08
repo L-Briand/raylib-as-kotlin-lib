@@ -38,7 +38,7 @@ kotlin {
                 implementation("net.orandja.raylib:lib-mingwx64:0.0.0")
             }
         }
-        getByName("macosArm64Main") {
+        macosMain {
             dependencies {
                 implementation("net.orandja.raylib:lib-macosarm64:0.0.0")
             }
