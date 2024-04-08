@@ -46,7 +46,7 @@ kotlin {
             }
             compilerOptions {
                 val kotlinCommonCompilerOptions = this@compilerOptions
-                freeCompilerArgs.addAll("-framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL")
+                freeCompilerArgs.addAll("-framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL".split("\\s+".toRegex()))
             }
         }
     }
