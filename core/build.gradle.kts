@@ -28,11 +28,6 @@ kotlin {
     }
 
     sourceSets {
-        commonMain {
-            dependencies {
-                implementation(kotlin("test"))
-            }
-        }
         linuxMain {
             dependencies {
                 implementation("net.orandja.raylib:lib-linuxx64:0.0.0")
