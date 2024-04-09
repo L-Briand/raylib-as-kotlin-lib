@@ -51,7 +51,7 @@ kotlin {
         }
         getByName("macosX64Main") {
             dependencies {
-                implementation("net.orandja.raylib:lib-macosarm64:0.0.0")
+                implementation("net.orandja.raylib:lib-macosx64:0.0.0")
             }
         }
     }
