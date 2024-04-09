@@ -24,9 +24,9 @@ fun createDefFile(platform: String) {
 
 fun KotlinNativeTargetWithHostTests.addRaylibCinteropOnMain(name: String) {
     compilations.getByName("main").cinterops.create("raylib") {
-        defFile(file("cinterop/linuxX64/raylib.def"))
+        defFile(file("cinterop/$name/raylib.def"))
         packageName("raylib")
-        compilerOpts("-I${file("cinterop/linuxX64/raylib/include").absolutePath}")
+        compilerOpts("-I${file("cinterop/$name/raylib/include").absolutePath}")
     }
 }
 
@@ -37,8 +37,8 @@ createDefFile("macOS")
 kotlin {
     linuxX64 { addRaylibCinteropOnMain("linuxX64") }
     mingwX64 { addRaylibCinteropOnMain("mingwX64") }
-    macosArm64 { addRaylibCinteropOnMain("macOS") }
     macosX64 { addRaylibCinteropOnMain("macOS") }
+    macosArm64 { addRaylibCinteropOnMain("macOS") }
 }
 
 publishing {
