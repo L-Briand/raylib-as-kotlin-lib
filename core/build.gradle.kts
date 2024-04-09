@@ -24,10 +24,13 @@ kotlin {
             entryPoint = "main"
         }
     }
-    macosArm64("macosArm64") {
+    macosArm64 {
         binaries.executable {
             entryPoint = "net.main"
         }
+    }
+    macosX64 {
+        binaries.executable { entryPoint = "net.main" }
     }
 
     sourceSets {
@@ -42,6 +45,11 @@ kotlin {
             }
         }
         getByName("macosArm64Main") {
+            dependencies {
+                implementation("net.orandja.raylib:lib-macosarm64:0.0.0")
+            }
+        }
+        getByName("macosX64Main") {
             dependencies {
                 implementation("net.orandja.raylib:lib-macosarm64:0.0.0")
             }

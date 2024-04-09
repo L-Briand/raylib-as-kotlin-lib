@@ -1,3 +1,5 @@
+package net
+
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.cValue
 import raylib.*
